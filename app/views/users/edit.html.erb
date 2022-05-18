@@ -14,17 +14,17 @@
 <%= form_with model: @user, url: user_path(@user.id), method: :patch do |f| %>
 
   <div>
-    <%= f.label :Name, for: "user_name" %>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div>
-    <%= f.label :Image, for: "user_profile_image" %>
+    <%= f.label :image, for: "user_profile_image" %>
     <%= f.file_field :profile_image, accept: "image/*" %>
   </div>
 
   <div>
-    <%= f.label :Introduction, for: "user_introduction" %>
+    <%= f.label :introduction %>
     <%= f.text_area :introduction %>
   </div>
 

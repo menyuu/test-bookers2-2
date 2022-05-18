@@ -14,12 +14,12 @@
 <%= form_with model: @book, url: book_path, method: :patch do |f| %>
 
   <div>
-    <%= f.label :Title, for: "book_title" %>
+    <%= f.label :title, for: "book_title" %>
     <%= f.text_field :title %>
   </div>
 
   <div>
-    <%= f.label :Opinion, for: "book_body" %>
+    <%= f.label :opinion, for: "book_body" %>
     <%= f.text_area :body %>
   </div>
 
