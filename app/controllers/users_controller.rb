@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :ensure_user, only: [:edit]
+
   def index
     @users = User.all
     @book = Book.new
