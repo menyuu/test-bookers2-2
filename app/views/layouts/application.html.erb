@@ -22,9 +22,8 @@
             <li>
               <%= link_to "Users", "#" %>
             </li>
-            <!--変更する-->
             <li>
-              <%= link_to "Books", "#" %>
+              <%= link_to "Books", books_path %>
             </li>
             <li>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
@@ -46,7 +45,7 @@
         </ul>
       </div>
     </header>
-    
+
     <%= yield %>
   </body>
 </html>
