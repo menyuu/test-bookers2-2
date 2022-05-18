@@ -44,7 +44,13 @@
         </ul>
       </div>
     </header>
-
+    <main>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+      <p><%= flash[:notice] %></p>
+    </div>
+    <% end %>
     <%= yield %>
+    </main>
   </body>
 </html>
