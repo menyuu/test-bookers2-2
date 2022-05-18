@@ -4,6 +4,7 @@
   <h2>User info</h2>
 
     <%= image_tag @user.get_profile_image(100, 100) %>
+<<<<<<< HEAD
     <teble>
       <tr></tr>
       <tr>
@@ -16,6 +17,11 @@
       </tr>
     </teble>
     <% if @user == current_user %>
+=======
+    <%= @user.name %>
+    <%= @user.introduction %>
+    <% if current_user%>
+>>>>>>> 9d4d9f57b6ed3c7c8f630b31d581b0ced90aa7dc
       <%=  link_to "編集", edit_user_path(@user.id) %>
     <% else %>
       <%= link_to "編集", user_path(current_user) %>
@@ -52,7 +58,11 @@
       <% @books.each do |book| %>
         <tr>
           <td>
+<<<<<<< HEAD
             <%= link_to user_path(book.user.id) do %>
+=======
+            <%= link_to user_path(book.id) do %>
+>>>>>>> 9d4d9f57b6ed3c7c8f630b31d581b0ced90aa7dc
               <%= image_tag book.user.get_profile_image(100, 100) %>
             <% end %>
           </td>

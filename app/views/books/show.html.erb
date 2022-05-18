@@ -2,6 +2,7 @@
   <h2>User info</h2>
 
     <%= image_tag @user.get_profile_image(100, 100) %>
+<<<<<<< HEAD
     <teble>
       <tr></tr>
       <tr>
@@ -13,6 +14,10 @@
         <th><%= @user.introduction %></th>
       </tr>
     </teble>
+=======
+    <%= @user.name %>
+    <%= @user.introduction %>
+>>>>>>> 9d4d9f57b6ed3c7c8f630b31d581b0ced90aa7dc
     <% if @user == current_user %>
       <%=  link_to "編集", edit_user_path(@user.id) %>
     <% else %>
