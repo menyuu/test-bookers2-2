@@ -4,7 +4,11 @@
     <%= image_tag @user.get_profile_image(100, 100) %>
     <%= @user.name %>
     <%= @user.introduction %>
-    <%=  link_to "編集", edit_user_path(@user.id) %>
+    <% if current_user%>
+      <%=  link_to "編集", edit_user_path(@user.id) %>
+    <% else %>
+      <%= link_to "編集", user_path(current_user) %>
+    <% end %>
 
   <h2>New book</h2>
 
