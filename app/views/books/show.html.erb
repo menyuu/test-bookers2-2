@@ -4,8 +4,7 @@
     <%= image_tag @user.get_profile_image(100, 100) %>
     <%= @user.name %>
     <%= @user.introduction %>
-    <!-- あとで変更 -->
-    <!--  link_to "編集", edit_user_path(@user.id) -->
+    <%=  link_to "編集", edit_user_path(@user.id) %>
 
   <h2>New book</h2>
 
@@ -28,7 +27,7 @@
     <tbody>
       <tr>
         <td>
-          <%= link_to  do %>
+          <%= link_to user_path(@book.user.id) do %>
            <%= image_tag @book.user.get_profile_image(100, 100) %><br><%= @book.user.name %>
            <% end %>
         </td>
