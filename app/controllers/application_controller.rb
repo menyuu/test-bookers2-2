@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_user
     if current_user.id != params[:id].to_i
-      flash[:notice] = "The account is different."
+      flash[:alert] = "The account is different."
       redirect_to user_path(current_user)
     end
   end
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   def ensure_books_user
     book = Book.find(params[:id])
     if current_user.id != book.user_id
-      flash[:notice] = "The account is different."
+      flash[:alert] = "The account is different."
       redirect_to books_path
     end
   end
