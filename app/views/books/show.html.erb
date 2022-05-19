@@ -1,38 +1,4 @@
-<div>
-  <h2>User info</h2>
-
-    <%= image_tag @user.get_profile_image(100, 100) %>
-    <teble>
-      <tr></tr>
-      <tr>
-        <th>name</th>
-        <th><%= @user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= @user.introduction %></th>
-      </tr>
-    </teble>
-    <% if @user == current_user %>
-      <%=  link_to "編集", edit_user_path(@user.id) %>
-    <% else %>
-      <%= link_to "編集", user_path(current_user) %>
-    <% end %>
-
-  <h2>New book</h2>
-
-    <%= form_with model: @book, url: books_path do |f| %>
-
-      <%= f.label :Title, for: "book_title" %>
-      <%= f.text_field :title %>
-
-      <%= f.label :Opinion, for: "book_body" %>
-      <%= f.text_area :body %>
-
-      <%= f.submit "Create Book" %>
-
-    <% end %>
-</div>
+<%= render 'users/info', user: @user, book: @book %>
 
 <div>
   <h2>Book detail</h2>
@@ -44,10 +10,10 @@
            <%= image_tag @user.get_profile_image(100, 100) %><br><%= @user.name %>
            <% end %>
         </td>
-        <td><%= link_to @user_book.title, book_path(@user_book.id) %></td>
-        <td><%= @user_book.body %></td>
-        <% if @user_book.user.id == current_user.id %>
-          <td><%= link_to "Edit", edit_book_path(@user_book.id) %></td>
+        <td><%= link_to @user_books.title, book_path(@user_books.id) %></td>
+        <td><%= @user_books.body %></td>
+        <% if @user.id == current_user.id %>
+          <td><%= link_to "Edit", edit_book_path(@user_books.id) %></td>
           <td><%= link_to "Destroy", book_path, method: :delete, data: {confirm: "本当に消しますか？"} %></td>
         <% end %>
       </tr>

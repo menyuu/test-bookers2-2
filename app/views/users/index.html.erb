@@ -1,39 +1,4 @@
-<div>
-  <h2>User info</h2>
-
-    <%= image_tag @user.get_profile_image(100, 100) %>
-    <teble>
-      <tr></tr>
-      <tr>
-        <th>name</th>
-        <th><%= @user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= @user.introduction %></th>
-      </tr>
-    </teble>
-    <% if @user == current_user %>
-      <%=  link_to "編集", edit_user_path(@user.id) %>
-    <% else %>
-      <%= link_to "編集", user_path(current_user) %>
-    <% end %>
-
-  <h2>New book</h2>
-
-    <%= form_with model: @book, url: books_path do |f| %>
-
-      <%= f.label :Title, for: "book_title" %>
-      <%= f.text_field :title %>
-
-      <%= f.label :Opinion, for: "book_body" %>
-      <%= f.text_area :body %>
-
-      <%= f.submit "Create Book" %>
-
-    <% end %>
-</div>
-
+<%= render 'info', user: @user, book: @book %>
 
 <div>
   <h2>Users</h2>
