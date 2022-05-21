@@ -9,8 +9,12 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
 
-
   has_one_attached :profile_image
+  
+  has_many :relationships
+  has_many :followings, through: :relationships, source: :follow
+  
+  
 
 
   def get_profile_image(width, height)
