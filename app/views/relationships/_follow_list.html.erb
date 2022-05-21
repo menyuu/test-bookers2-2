@@ -1,0 +1,26 @@
+<% if users.exists? %>
+  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-5">
+    <% users.each do |user| %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= link_to user.name, user_path(user.id) %></td>
+            <td><%= link_to "following: #{user.followings.count}", user_followings_path(user.id) %></td>
+            <td><%= link_to "follower: #{user.followers.count}", user_followers_path(user.id) %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+<% else %>
+  <div class="mx-auto mt-5">
+    <p>ユーザーがいません</p>
+  </div>
+<% end %>
