@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  get 'search' => 'searches#search'
 
   
   resources :books, only: [:index, :show, :create, :edit, :update, :destroy ]
