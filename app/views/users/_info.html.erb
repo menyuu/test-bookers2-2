@@ -33,7 +33,7 @@
   <%= form_with model: book, url: books_path do |f| %>
     <div class="form-group">
       <%= f.label :title, for: "book_title" %>
-      <%= f.text_field :title, class: "form-control" %>
+      <%= f.text_field :title, autofocus: true, class: "form-control" %>
     </div>
 
     <div class="form-group">
