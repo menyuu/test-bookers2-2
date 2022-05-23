@@ -1,0 +1,22 @@
+<h2>Results index</h2>
+
+<table class="table table-hover table-inverse">
+  <% if @model == "User" %>
+    <tbody>
+      <% @records.each do |user| %>
+        <tr>
+          <td><%= link_to user.name, user_path(user.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    <tbody>
+      <% @records.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>

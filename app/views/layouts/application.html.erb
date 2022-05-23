@@ -75,6 +75,9 @@
           <%= flash[:notice] %>
         <% end %>
       </p>
+      <% if user_signed_in? %>
+        <%= render 'searches/search' %>
+      <% end %>
       <%= yield %>
     </main>
     <footer>
