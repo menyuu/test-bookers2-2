@@ -23,6 +23,9 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li class="nav-item">
+                  <%= render 'searches/search' %>
+                </li>
+                <li class="nav-item">
                   <%= link_to user_path(current_user), class: "nav-link text-light" do %>
                     <i class="fas fa-home"></i> Home
                   <% end %>
@@ -75,9 +78,6 @@
           <%= flash[:notice] %>
         <% end %>
       </p>
-      <% if user_signed_in? %>
-        <%= render 'searches/search' %>
-      <% end %>
       <%= yield %>
     </main>
     <footer>

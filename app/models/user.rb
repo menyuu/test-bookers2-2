@@ -45,15 +45,13 @@ class User < ApplicationRecord
 
   def self.search_for(content, method)
     if method == 'perfect'
-      User.where(title: content)
+      User.where(name: content)
     elsif method == 'forward'
-      User.where('title LIKE ?', content + '%')
+      User.where('name LIKE ?', content + '%')
     elsif method == 'backward'
-      User.where('title LIKE ?', '%' + content)
-    elsif method == 'partial'
-      User.where('title LIKE ?', '%' + content + '%')
+      User.where('name LIKE ?', '%' + content)
     else
-      User.all
+      User.where('name LIKE ?', '%' + content + '%')
     end
   end
 
